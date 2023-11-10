@@ -8,7 +8,6 @@ const AdminLogin = () => {
 
   const handleSubmit = async () => {
     // fetch data
-
     navigate("home");
   };
 

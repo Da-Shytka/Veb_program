@@ -45,7 +45,7 @@ export const ArticleTemplate = ({ item }) => {
                     alt === "three"? threePng: 
                     alt === "four"? fourPng: 
                     fivePng
-                    } alt={alt} />;
+                    } alt={alt} />
                 <div className="article__content ">
                     <p className="content__date">
                         {content1}
@@ -62,31 +62,38 @@ export const ArticleTemplate = ({ item }) => {
   };
 
   export const Blog = () => {
-
     // Данные для основной статьи, фильтруем по isPrimary
-    const mainArticleData =  blogData.filter((item) => item.isPrimary === true)[0];
+    const mainArticleData = blogData.filter((item) => item.isPrimary === true)[0];
     // Данные для второй статьи, фильтруем по !isPrimary
-    const secondaryArticlesData =  blogData.filter((item) => item.isPrimary === false);
-  // создаем результатирующий шаблон
+    const secondaryArticlesData = blogData.filter((item) => item.isPrimary === false);
+
+    // создаем результатирующий шаблон
     const { isLoading, isError, error, data } = useData({
         endpoint: "blog",
         options: {
-        method: "GET",
+            method: "GET",  
         },
     });
+    console.log("data");
+    console.log(data);
+    if (isLoading) return <Preloader />;
+    if (isError) return <div>{JSON.stringify(error)}</div>;
+    if (!data) return <div>Пусто!</div>
 
-  if (isLoading) return <Preloader />;
-  if (isError) return <div>{JSON.stringify(error)}</div>;
-
-  return (
-        <>
-            <ArticleTemplate item={mainArticleData}/>
-            <div className="blog__middle">
-            {(data ? data : secondaryArticlesData).map((item, index) => (
+// Данные для основной статьи, фильтруем по isPrimary
+const newMainArticleData = data?.filter((item) => item.isPrimary === true)[0];
+// Данные для второй статьи, фильтруем по !isPrimary
+const newSecondaryArticlesData = data?.filter((item) => item.isPrimary === false);
+return (
+    <>
+        <ArticleTemplate item={newMainArticleData ? newMainArticleData : mainArticleData} />
+        <div className="blog__middle">
+            {(newSecondaryArticlesData ? newSecondaryArticlesData : secondaryArticlesData).map((item, index) => (
                 <ArticleTemplate key={index} item={item} />
             ))}
-            </div>
-        </>
-        )    
-  };
-  export default Blog;
+        </div>
+    </>
+);
+};
+
+export default Blog;

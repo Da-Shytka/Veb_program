@@ -11,12 +11,11 @@ import Footer from "./../components/Footer";
 import End from "./../components/End";   
 
 
-const Home = ({ isEditable }) => {
+const Home = ( ) => {
   return (
     <>
-      <section
-        className="section header" id="header" //contentEditable={isEditable}
-      > <Header />
+      <section className="section header" id="header"> 
+        <Header />
       </section>
       <section className="section hero_section" id="hero">
         <Hero />
