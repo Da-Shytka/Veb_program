@@ -9,12 +9,10 @@ const filePath = join(
   "files",
   "beginData.json"
 );
-console.log(filePath);
 
 const getBeginDataModel = () => {
   try {
     const file = readFileSync(filePath, "utf-8");
-    // console.log(file);
 
     return JSON.parse(file);
   } catch (error) {

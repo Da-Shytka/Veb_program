@@ -2,18 +2,18 @@ import { useState } from "react";
 import useData from "../../hooks/useData";
 import Preloader from "../Preloader";
 import {
-  useBlogTextContext,
-  usePostBlogTextContext,
-} from "../../contexts/admin/BlogTextContext";
-const AdminBlogTextData = ({ content }) => {
+  useEndContext,
+  usePostEndContext,
+} from "../../contexts/admin/EndContext";
+const AdminEndData = ({ content }) => {
 
     const [titleData, setTitleData] = useState(content);
 
-    let blogTextContext = useBlogTextContext();
+    let endContext = useEndContext();
 
     const handleTitleData = (e) => {
       setTitleData(e.target.value);
-      blogTextContext.blogTextLeftData.content = e.target.value;
+      endContext.blogEndData.content = e.target.value;
     };
 
     return (
@@ -26,9 +26,9 @@ const AdminBlogTextData = ({ content }) => {
     );
   };
 
-  const AdminBlogText = () => {
+  const AdminEnd = () => {
     const { isLoading, isError, error, data } = useData({
-      endpoint: "text",
+      endpoint: "end",
       options: {
         method: "GET",
       },
@@ -38,7 +38,7 @@ const AdminBlogTextData = ({ content }) => {
     const [isPostDataError, setIsPostDataError] = useState(false);
     const [postDataError, setPostDataError] = useState(null);
   
-    const postData = usePostBlogTextContext();
+    const postData = usePostEndContext();
   
     const handlePostData = async () => {
       try {
@@ -60,8 +60,8 @@ const AdminBlogTextData = ({ content }) => {
   
     return (
       <div className="admin_container admin_Hero">
-        <h2>Блог-заголовок.</h2>
-        <AdminBlogTextData content={data.blogTextLeftData.content} />
+        <h2>Конец.</h2>
+        <AdminEndData content={data.blogEndData.content} />
         <button className="btn primary-btn" onClick={handlePostData}>
           {isPostDataLoading && <Preloader />} Сохранить
         </button>
@@ -73,6 +73,6 @@ const AdminBlogTextData = ({ content }) => {
     );
   };
   
-  export default AdminBlogText;
+  export default AdminEnd;
   
   

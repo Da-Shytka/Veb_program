@@ -25,9 +25,6 @@ const AdminLogoData = ({ logoData }) => {
     headerContext.logoData.href = e.target.value;
   };
 
-  // console.log("HeaderContext");
-  // console.log(useHeaderContext());
-
   return (
     <div className="admin_container__block">
       <h3>Логотип:</h3>
@@ -85,8 +82,6 @@ const AdminMenuLink = ({ item }) => {
 };
 
 const AdminMenu = ({ menuData }) => {
-  // console.log("menuData");
-  // console.log(menuData);
   return (
     <div className="admin_container__block">
       <h3>Меню шапки:</h3>{" "}
@@ -117,9 +112,6 @@ const AdminButtonsSingleButton = ({ item, index }) => {
     setIsPrimaryData(e.target.value);
     headerContext.buttonsData[index].isPrimary = e.target.value;
   };
-
-  // console.log("HeaderContext");
-  // console.log(useHeaderContext());
 
   return (
     <div className="block__card">
@@ -186,9 +178,6 @@ const AdminHeader = () => {
   if (isLoading) return <Preloader />;
   if (isError) return <div>{JSON.stringify(error)}</div>;
   if (!data) return <Preloader />;
-
-  // console.log("New data");
-  // console.log(data);
 
   return (
     <div className="admin_container admin_header">

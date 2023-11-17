@@ -74,8 +74,6 @@ export const ArticleTemplate = ({ item }) => {
             method: "GET",  
         },
     });
-    console.log("data");
-    console.log(data);
     if (isLoading) return <Preloader />;
     if (isError) return <div>{JSON.stringify(error)}</div>;
     if (!data) return <div>Пусто!</div>

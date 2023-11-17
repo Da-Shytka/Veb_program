@@ -13,7 +13,6 @@ const filePath = join(
 const getWhatIsGptDataModel = () => {
   try {
     const file = readFileSync(filePath, "utf-8");
-    console.log(file);
 
     return JSON.parse(file);
   } catch (error) {

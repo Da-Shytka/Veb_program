@@ -6,14 +6,8 @@ const PostBlogTextContext = createContext();
 
 const BlogTextContextProvider = ({ children }) => {
   const data = useRef(blogTextData);
-
-  // Возвращаем 2 контекста
-  // 1 - для получения данных
-  // 2 - для отправки данных на сервер и получения результата
   return (
-    <BlogTextContext.Provider value={data.current}>
-      {children}
-    </BlogTextContext.Provider>
+    <BlogTextContext.Provider value={data.current}>{children}</BlogTextContext.Provider>
   );
 };
 

@@ -7,7 +7,6 @@ import {
 } from "../../contexts/admin/ExceedingContext";
 
 const AdminContentAllButton = ({ button }) => {
-  console.log(button);
     const [titleData, setTitleData] = useState(button.title);
     const [hrefData, setHrefData] = useState(button.href);
 
@@ -38,7 +37,6 @@ const AdminContentAllButton = ({ button }) => {
   };
 
   const AdminContentAll = ({ contentAllData }) => {  
-    console.log(contentAllData);
     // const [contoData, setContoData] = useState(contentAllData.content1);
     const [content1Data, setContent1Data] = useState(contentAllData.content1);
     const [content2Data, setContent2Data] = useState(contentAllData.content2);
@@ -140,8 +138,6 @@ const AdminExceeding = () => {
       method: "GET",
     },
   });
-  console.log('data')
-  console.log(data)
   const [isPostDataLoading, setIsPostDataLoading] = useState(false);
   const [isPostDataError, setIsPostDataError] = useState(false);
   const [postDataError, setPostDataError] = useState(null);

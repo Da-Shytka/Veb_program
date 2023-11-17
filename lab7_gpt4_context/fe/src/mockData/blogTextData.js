@@ -1,8 +1,8 @@
-const blogTextLeftData = {
+export const blogTextLeftData = {
     content: "Многое Происходит, Мы Ведем об Этом Блог.",
 };
 
-const blogTextData = {
+export const blogTextData = {
     blogTextLeftData,
  };
 

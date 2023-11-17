@@ -6,7 +6,6 @@ const filePath = join(__dirname, "..", "..", "db", "files", "brandsData.json");
 const getBrandsDataModel = () => {
   try {
     const file = readFileSync(filePath, "utf-8");
-    console.log(file);
 
     return JSON.parse(file);
   } catch (error) {

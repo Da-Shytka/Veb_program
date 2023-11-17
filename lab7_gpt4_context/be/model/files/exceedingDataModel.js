@@ -9,12 +9,10 @@ const filePath = join(
   "files",
   "exceedingData.json"
 );
-console.log(filePath);
 
 const getExceedingDataModel = () => {
   try {
     const file = readFileSync(filePath, "utf-8");
-    // console.log(file);
 
     return JSON.parse(file);
   } catch (error) {

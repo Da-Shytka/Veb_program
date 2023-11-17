@@ -9,12 +9,10 @@ const filePath = join(
   "files",
   "footerData.json"
 );
-console.log(filePath);
 
 const getFooterDataModel = () => {
   try {
     const file = readFileSync(filePath, "utf-8");
-    // console.log(file);
 
     return JSON.parse(file);
   } catch (error) {

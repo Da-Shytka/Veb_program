@@ -82,9 +82,6 @@ const AdminFutureHere = () => {
   if (isError) return <div>{JSON.stringify(error)}</div>;
   if (!data) return <Preloader />;
 
-  console.log("New data");
-  console.log(data);
-
   return (
     <div className="admin_container admin_Hero">
       <h2>Будущее уже наступило.</h2>

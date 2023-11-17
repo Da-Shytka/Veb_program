@@ -6,7 +6,6 @@ const filePath = join(__dirname, "..", "..", "db", "files", "headerData.json");
 const getHeaderDataModel = () => {
   try {
     const file = readFileSync(filePath, "utf-8");
-    // console.log(file);
 
     return JSON.parse(file);
   } catch (error) {
