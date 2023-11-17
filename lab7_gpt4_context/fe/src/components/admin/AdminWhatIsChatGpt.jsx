@@ -139,9 +139,9 @@ const AdminButtonsSingleButton = ({ item, index }) => {
 };
 
 const AdminWhatIsGptBottom = ({ whatIsGptBottomData }) => {
+
   return (
     <div className="admin_container__block">
-      <h3>Нижние данные:</h3>
       {whatIsGptBottomData.map((item, index) => (
         <AdminButtonsSingleButton key={index} item={item} index={index} />
       ))}

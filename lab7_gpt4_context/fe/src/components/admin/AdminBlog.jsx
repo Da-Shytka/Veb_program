@@ -62,7 +62,7 @@ const AdminblogData = ({ item, index }) => {
     );
   };
 
-  const AdminblogDataMas = ({ blogData }) => {
+  const AdminblogDataMas = ({blogData}) => {
     return (
       <div className="admin_container__block">
         <h3>Нижние данные:</h3>
@@ -80,8 +80,6 @@ const AdminblogData = ({ item, index }) => {
         method: "GET",
       },
     });
-    
-    console.log(data)
 
     const [isPostDataLoading, setIsPostDataLoading] = useState(false);
     const [isPostDataError, setIsPostDataError] = useState(false);
@@ -110,7 +108,7 @@ const AdminblogData = ({ item, index }) => {
     return (
       <div className="admin_container admin_Hero">
         <h2>Блог.</h2>
-        <AdminblogDataMas blogData={data.blogData} />
+        <AdminblogDataMas blogData={data} />
         <button className="btn primary-btn" onClick={handlePostData}>
           {isPostDataLoading && <Preloader />} Сохранить
         </button>

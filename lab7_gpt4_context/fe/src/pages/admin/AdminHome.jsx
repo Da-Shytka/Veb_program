@@ -7,7 +7,7 @@ import AdminExceeding from "../../components/admin/AdminExceeding";
 import AdminBegin from "../../components/admin/AdminBegin";
 import AdminBlogText from "../../components/admin/AdminBlogText";
 import AdminBlog from "../../components/admin/AdminBlog";
-
+import AdminFooter from "../../components/admin/AdminFooter";
 import AdminEnd from "../../components/admin/AdminEnd";
 
 import HeroContextProvider from "../../contexts/admin/HeroContext";
@@ -19,7 +19,7 @@ import ExceedingContextProvider from "../../contexts/admin/ExceedingContext";
 import BeginContextProvider from "../../contexts/admin/BeginContext";
 import BlogTextContextProvider from "../../contexts/admin/BlogTextContext";
 import BlogContextProvider from "../../contexts/admin/BlogContext";
-
+import FooterContextProvider from "../../contexts/admin/FooterContext";
 import EndContextProvider from "../../contexts/admin/EndContext";
 
 const AdminHome = () => {
@@ -52,7 +52,9 @@ const AdminHome = () => {
       <BlogContextProvider>
         <AdminBlog />
       </BlogContextProvider>
-
+      <FooterContextProvider>
+        <AdminFooter />
+      </FooterContextProvider>
       <EndContextProvider>
         <AdminEnd />
       </EndContextProvider>
