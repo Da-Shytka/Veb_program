@@ -8,10 +8,12 @@ import {
 
 const AdminblogData = ({ item, index }) => {
     const [isPrimaryData, setIsPrimaryData] = useState(item.isPrimary);
-    const [imgData, setImgData] = useState(item.img);
+    const [imgSrcData, setImgSrcData] = useState(item.img.src);
+    const [imgAltData, setImgAltData] = useState(item.img.alt);
     const [content1Data, setContent1Data] = useState(item.content1);
     const [content2Data, setContent2Data] = useState(item.content2);
-    const [buttonData, setButtonData] = useState(item.button);
+    const [buttonHrefData, setButtonHrefData] = useState(item.button.href);
+    const [buttonTitleData, setButtonTitleData] = useState(item.button.title);
 
     let blogDataContext = useBlogContext();
   
@@ -19,10 +21,14 @@ const AdminblogData = ({ item, index }) => {
         setIsPrimaryData(e.target.value);
         blogDataContext.blogData[index].isPrimary = e.target.value;
     };
-    const handleImgData = (e) => {
-        setImgData(e.target.value);
-        blogDataContext.blogData[index].img = e.target.value;
+    const handleImgSrcData = (e) => {
+        setImgSrcData(e.target.value);
+        blogDataContext.blogData[index].img.src = e.target.value;
     };
+    const handleImgAltData = (e) => {
+      setImgAltData(e.target.value);
+      blogDataContext.blogData[index].img.alt = e.target.value;
+  };
     const handleContent1Data = (e) => {
         setContent1Data(e.target.value);
         blogDataContext.blogData[index].content1 = e.target.value;
@@ -31,20 +37,31 @@ const AdminblogData = ({ item, index }) => {
         setContent2Data(e.target.value);
         blogDataContext.blogData[index].content2 = e.target.value;
     };
-    const handleButtonData = (e) => {
-        setButtonData(e.target.value);
-        blogDataContext.blogData[index].button = e.target.value;
+    const handleButtonHrefData = (e) => {
+        setButtonHrefData(e.target.value);
+        blogDataContext.blogData[index].button.href = e.target.value;
     };
+    const handleButtonTitleData = (e) => {
+      setButtonTitleData(e.target.value);
+      blogDataContext.blogData[index].button.title = e.target.value;
+  };
     
     return (
-      <div className="block__card">
+      <>
+      <div className="block__blog_name">
         <div className="block__item">
           <label>Приоритетность:</label>
           <input type="text" value={isPrimaryData} onChange={handleIsPrimaryData} />
         </div>
+      </div>
+      <div className="block__blog_data">
         <div className="block__item">
           <label>Картинка:</label>
-          <input type="text" value={imgData} onChange={handleImgData} />
+          <input type="text" value={imgSrcData} onChange={handleImgSrcData} />
+        </div>
+        <div className="block__item">
+          <label>Картинка:</label>
+          <input type="text" value={imgAltData} onChange={handleImgAltData} />
         </div>
         <div className="block__item">
           <label>Контент 1:</label>
@@ -56,9 +73,14 @@ const AdminblogData = ({ item, index }) => {
         </div>
         <div className="block__item">
           <label>Кнопка:</label>
-          <input type="text" value={buttonData} onChange={handleButtonData} />
+          <input type="text" value={buttonHrefData} onChange={handleButtonHrefData} />
+        </div>
+        <div className="block__item">
+          <label>Кнопка:</label>
+          <input type="text" value={buttonTitleData} onChange={handleButtonTitleData} />
         </div>
       </div>
+      </>
     );
   };
 

@@ -8,10 +8,15 @@ import {
 
 const AdminfooterData = ({ item, index }) => {
     const [headerData, setHeaderData] = useState(item.header);
-    const [button1Data, setButton1Data] = useState(item.button1);
-    const [button2Data, setButton2Data] = useState(item.button2);
-    const [button3Data, setButton3Data] = useState(item.button3);
-    const [button4Data, setButton4Data] = useState(item.button4);
+    const [button1HrefData, setButton1HrefData] = useState(item.button1.href1);
+    const [button1TitleData, setButton1TitleData] = useState(item.button1.title1);
+    const [button2HrefData, setButton2HrefData] = useState(item.button2.href2);
+    const [button2TitleData, setButton2TitleData] = useState(item.button2.title2);
+    const [button3HrefData, setButton3HrefData] = useState(item.button3.href3);
+    const [button3TitleData, setButton3TitleData] = useState(item.button3.title3);
+    const [button4HrefData, setButton4HrefData] = useState(item.button4.href4);
+    const [button4TitleData, setButton4TitleData] = useState(item.button4.title4);
+    
 
     let footerDataContext = useFooterContext();
   
@@ -19,46 +24,82 @@ const AdminfooterData = ({ item, index }) => {
         setHeaderData(e.target.value);
         footerDataContext.footerData[index].header = e.target.value;
     };
-    const handleButton1Data = (e) => {
-        setButton1Data(e.target.value);
-        footerDataContext.footerData[index].button1 = e.target.value;
+    const handleButton1HrefData = (e) => {
+      setButton1HrefData(e.target.value);
+      footerDataContext.footerData[index].button1.href1 = e.target.value;
     };
-    const handleButton2Data = (e) => {
-        setButton2Data(e.target.value);
-        footerDataContext.footerData[index].button2 = e.target.value;
+    const handleButton1TitleData = (e) => {
+      setButton1TitleData(e.target.value);
+      footerDataContext.footerData[index].button1.title1 = e.target.value;
     };
-    const handleButton3Data = (e) => {
-        setButton3Data(e.target.value);
-        footerDataContext.footerData[index].button3 = e.target.value;
+    const handleButton2HrefData = (e) => {
+      setButton2HrefData(e.target.value);
+      footerDataContext.footerData[index].button2.href2 = e.target.value;
     };
-    const handleButton4Data = (e) => {
-        setButton4Data(e.target.value);
-        footerDataContext.footerData[index].button4 = e.target.value;
+    const handleButton2TitleData = (e) => {
+      setButton2TitleData(e.target.value);
+      footerDataContext.footerData[index].button2.title2 = e.target.value;
+    };
+    const handleButton3HrefData = (e) => {
+      setButton3HrefData(e.target.value);
+      footerDataContext.footerData[index].button3.href3 = e.target.value;
+    };
+    const handleButton3TitleData = (e) => {
+      setButton3TitleData(e.target.value);
+      footerDataContext.footerData[index].button3.title3 = e.target.value;
+    };
+    const handleButton4HrefData = (e) => {
+      setButton4HrefData(e.target.value);
+      footerDataContext.footerData[index].button4.href4 = e.target.value;
+    };
+    const handleButton4TitleData = (e) => {
+      setButton4TitleData(e.target.value);
+      footerDataContext.footerData[index].button4.title4 = e.target.value;
     };
     
     return (
-      <div className="block__card">
+      <>
+      <div className="block__silki_name">
         <div className="block__item">
-          <label>Название:</label>
+          <label>Заголовок:</label>
           <input type="text" value={headerData} onChange={handleHeaderData} />
         </div>
-        <div className="block__item">
-          <label>Ссылка 1:</label>
-          <input type="text" value={button1Data} onChange={handleButton1Data} />
-        </div>
-        <div className="block__item">
-          <label>Ссылка 2:</label>
-          <input type="text" value={button2Data} onChange={handleButton2Data} />
-        </div>
-        <div className="block__item">
-          <label>Ссылка 3:</label>
-          <input type="text" value={button3Data} onChange={handleButton3Data} />
-        </div>
-        <div className="block__item">
-          <label>Ссылка 4:</label>
-          <input type="text" value={button4Data} onChange={handleButton4Data} />
-        </div>
       </div>
+      <div className="block__silki_data">
+          <div className="block__item">
+            <label>Название 1:</label>
+            <input type="text" value={button1TitleData} onChange={handleButton1TitleData} />
+          </div>
+          <div className="block__item">
+            <label>Ссылка 1:</label>
+            <input type="text" value={button1HrefData} onChange={handleButton1HrefData} />
+          </div>
+          <div className="block__item">
+            <label>Название 2:</label>
+            <input type="text" value={button2TitleData} onChange={handleButton2TitleData} />
+          </div>
+          <div className="block__item">
+            <label>Ссылка 2:</label>
+            <input type="text" value={button2HrefData} onChange={handleButton2HrefData} />
+          </div>
+          <div className="block__item">
+            <label>Название 3:</label>
+            <input type="text" value={button3TitleData} onChange={handleButton3TitleData} />
+          </div>
+          <div className="block__item">
+            <label>Ссылка 3:</label>
+            <input type="text" value={button3HrefData} onChange={handleButton3HrefData} />
+          </div>
+          <div className="block__item">
+            <label>Название 4:</label>
+            <input type="text" value={button4TitleData} onChange={handleButton4TitleData} />
+          </div>
+          <div className="block__item">
+            <label>Ссылка 4:</label>
+            <input type="text" value={button4HrefData} onChange={handleButton4HrefData} />
+          </div>
+        </div>
+      </>
     );
   };
 
