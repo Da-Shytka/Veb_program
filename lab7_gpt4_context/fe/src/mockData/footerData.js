@@ -1,0 +1,81 @@
+  const footerData = [
+    {
+      header: "GPT-3",
+      button1: {
+        href1: "#",
+        title1: "ул. Профессора Поздеева, 13, к.Г, Пермь, Пермский край, 614013 Все права защищены",
+      },
+      button2: {
+        href2: "#",
+        title2: "",
+      },
+      button3: {
+        href3: "#",
+        title3: "",
+      },
+      button4: {
+        href4: "#",
+        title4: "",
+      },
+    },
+    {
+      header: "Ссылки",
+      button1: {
+        href1: "#",
+        title1: "Овероны",
+      },
+      button2: {
+        href2: "#",
+        title2: "Соц. сети",
+      },
+      button3: {
+        href3: "#",
+        title3: "Счетчики",
+      },
+      button4: {
+        href4: "#",
+        title4: "",
+      },
+    },
+    {
+      header: "Компания",
+      button1: {
+        href1: "#",
+        title1: "Условия использования",
+      },
+      button2: {
+        href2: "#",
+        title2: "Перс. данные",
+      },
+      button3: {
+        href3: "#",
+        title3: "Контакты",
+      },
+      button4: {
+        href4: "#",
+        title4: "",
+      },
+    },
+    {
+      header: "Контакты",
+      button1: {
+        href1: "#",
+        title1: "ул. Профессора Поздеева, 13, к.Г, Пермь",
+      },
+      button2: {
+        href2: "#",
+        title2: "+7 (342) 2-198-520",
+      },
+      button3: {
+        href3: "#",
+        title3: "info@pstu.ru",
+      },
+      button4: {
+        href4: "#",
+        title4: "",
+      },
+    },
+  ];
+
+  export default footerData;
+  
